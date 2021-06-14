@@ -1,0 +1,12 @@
+<p>dish-detailed works!</p>
+<div *ngIf="dishToDisplay">
+    <p>
+        
+        ..................................{{dishToDisplay.id}}<br>
+        ..................................{{dishToDisplay.name}}<br>
+        ..................................{{dishToDisplay.type}}<br>
+        ..................................{{dishToDisplay.price}}<br>
+        <img [src]="dishToDisplay.imageUrl" width=380 height=270> <br>
+    </p>
+    <button>poruci</button>
+</div>

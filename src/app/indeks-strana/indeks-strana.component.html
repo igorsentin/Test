@@ -1,0 +1,15 @@
+<h1>indeks-strana works!</h1>
+<h4>Logovanje, korisnik ili administrtop, pitanje je sad!</h4>
+<h6>------<input type="checkbox" [(ngModel)]="sh">---->administrator</h6><br>
+---->ime<br>
+<input [(ngModel)]="indeksime"><br>
+---->prezime<br>
+<input [(ngModel)]="indeksprezime"><br>
+---->adresa<br>
+<input [(ngModel)]="indeksadresa" class="shahovnica" [disabled]=sh><br>
+---->email<br>
+<input [(ngModel)]="indeksemail"><br>
+---->sifra<br>
+<input [(ngModel)]="indekssifra"><br><br>
+<button (click)="onClick()">uloguj se</button><button (click)="onClickNovo()">napravi nalog</button><br>
+<label>{{povratnitekst}}</label><br><br>

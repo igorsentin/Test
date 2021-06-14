@@ -1,0 +1,23 @@
+<p>administrativni-meni works!</p>
+
+<div class="row">
+    <div class="col-md-5">
+        <ul class="list-group">
+            <li *ngFor="let dish of dishes" class="list-group-item" >
+                <div *ngIf="dish">
+                    <p>
+                        
+                        ..................................{{dish.id}}----><button>obrisi</button><br>
+                        ..................................{{dish.name}}<br>
+                        ..................................{{dish.type}}<br>
+                        ..................................{{dish.price}}<br>
+                        <img [src]="dish.imageUrl" width=380 height=270> <br>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-7">
+            <app-dish-input></app-dish-input>
+    </div>
+</div>

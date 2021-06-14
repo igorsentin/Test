@@ -1,0 +1,16 @@
+<h1>dish-list works!</h1>
+<div class="row">
+    <div class="col-md-5">
+        <ul class="list-group">
+            <li *ngFor="let dish of dishes" class="list-group-item" 
+                [class.selected]="dish === selectedDish"
+                (click)="onSelect(dish)">
+                {{dish.name}} ----- {{dish.type}}
+                
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-7">
+            <app-dish-detailed [dishToDisplay]="selectedDish"></app-dish-detailed>
+    </div>
+</div>
