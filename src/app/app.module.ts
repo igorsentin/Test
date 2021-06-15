@@ -14,6 +14,8 @@ import { AdministrativniMeniComponent } from './administrativni-meni/administrat
 import { DishInputComponent } from './dish-input/dish-input.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,7 @@ import { MessagesComponent } from './messages/messages.component';
      DishInputComponent,
      HeroDetailComponent,
      MessagesComponent,
+     DashboardComponent,
   ],
   imports: [
     BrowserModule,

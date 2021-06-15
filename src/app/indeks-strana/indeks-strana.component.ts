@@ -83,17 +83,14 @@ export class IndeksStranaComponent implements OnInit {
             this.indeksemail != '' &&
             this.indekssifra != '')
         {
-          localStorage.SetItem ("user",{id:this.indeksid,
-                                       ime:this.indeksime,
-                                       prezime:this.indeksprezime,
-                                       adresa:this.indeksadresa,
-                                       email:this.indeksemail,
-                                       sifra:this.indekssifra});
-          this.povratnitekst=this.indeksime;
-        }
-        else
-        {
-
+          var obj= JSON.stringify({id:this.indeksid,
+            ime:this.indeksime,
+            prezime:this.indeksprezime,
+            adresa:this.indeksadresa,
+            email:this.indeksemail,
+            sifra:this.indekssifra})
+            localStorage.setItem("user",obj);
+            this.povratnitekst=('------uspesno!-usr--> '+this.indeksime);
         }
     }
     if (this.sh == true) {
@@ -102,16 +99,13 @@ export class IndeksStranaComponent implements OnInit {
            this.indeksemail != '' &&
            this.indekssifra != '')
         {
-          localStorage.SetItem("admin",{id:this.indeksid,
-                                        ime:this.indeksime,
-                                        prezime:this.indeksprezime,
-                                        email:this.indeksemail,
-                                        sifra:this.indekssifra});
-          this.povratnitekst=('------uspesno!------> '+this.indeksime);
-        }
-        else
-        {
-
+          var obj= JSON.stringify({id:this.indeksid,
+            ime:this.indeksime,
+            prezime:this.indeksprezime,
+            email:this.indeksemail,
+            sifra:this.indekssifra})
+            localStorage.setItem("admin",obj);
+            this.povratnitekst=('------uspesno!-adm--> '+this.indeksime);
         }
     }
     this.indeksid++;

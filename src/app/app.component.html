@@ -1,8 +1,13 @@
+<nav>
+   
+    <a routerLink="/dashboard">Dashboard</a>+
+    <a routerLink="/heroes">Heroes</a>+
+    <a routerLink="/kj">Kj</a>+
+    <a routerLink="/administrativni-meni">Admin meni</a>+
+    <a routerLink="/indeks-strana">Naslovna</a>+
+    <a routerLink="/dish-list">Meni</a>
+</nav>
 <div class="container">
-    <app-dish-list></app-dish-list>
+    <router-outlet></router-outlet>
 </div>
-<app-indeks-strana></app-indeks-strana>
-<app-administrativni-meni></app-administrativni-meni>
-<app-kj></app-kj>
-<app-heroes></app-heroes>
 <app-messages></app-messages>
