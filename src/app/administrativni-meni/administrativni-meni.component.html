@@ -1,5 +1,5 @@
 <p>administrativni-meni works!</p>
-
+<input [(ngModel)]="admpretraga" placeholder="pretraga ovde" class="spacing"><br>
 <div class="row">
     <div class="col-md-5">
         <ul class="list-group">
@@ -7,11 +7,12 @@
                 <div *ngIf="dish">
                     <p>
                         
-                        ..................................{{dish.id}}----><button>obrisi</button><br>
+                        ..................................{{dish.id}}---->
+                        <button (click)="OnClickObrisi(dish)">obrisi</button><br>
                         ..................................{{dish.name}}<br>
                         ..................................{{dish.type}}<br>
                         ..................................{{dish.price}}<br>
-                        <img [src]="dish.imageUrl" width=280 height=170> <br>
+                        <img [src]="dish.imageUrl" width=180 height=130> 
                     </p>
                 </div>
             </li>

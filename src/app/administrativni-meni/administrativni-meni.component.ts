@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Dish } from '../dish';
-import { Plate } from '../Plate';
+import { deteleDishByID, Plate } from '../Plate';
 
 
 @Component({
@@ -11,9 +11,15 @@ import { Plate } from '../Plate';
 export class AdministrativniMeniComponent implements OnInit {
   constructor() { }
   dishes = Plate;
-
-
+  admpretraga='';
+  ovo: any;
   ngOnInit(): void {
+  }
+
+  OnClickObrisi(dish:any): void{
+    deteleDishByID(dish.id);
+    this.dishes=Plate;
+    
   }
 
 }

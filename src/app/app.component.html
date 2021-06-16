@@ -1,13 +1,15 @@
+<html>
 <nav>
-   
-    <a routerLink="/dashboard">Dashboard</a>+
-    <a routerLink="/heroes">Heroes</a>+
-    <a routerLink="/kj">Kj</a>+
-    <a routerLink="/administrativni-meni">Admin meni</a>+
-    <a routerLink="/indeks-strana">Naslovna</a>+
-    <a routerLink="/dish-list">Meni</a>
+    <button routerLink="/indeks-strana">Naslovna</button>
+    <button routerLink="/logovanje">Logovanje</button>
+    <button *ngIf="booladmin" routerLink="/administrativni-meni">Admin meni</button>
+    <button *ngIf="booluser" routerLink="/dish-list">Meni</button>
 </nav>
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
-<app-messages></app-messages>
+<body>
+    <button (click)="Osvezi()">Osvezi</button>
+    <div>
+       <router-outlet></router-outlet>
+    </div>
+    {{ok}}{{booladmin}}{{booluser}}
+</body>
+</html>

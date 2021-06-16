@@ -3,6 +3,7 @@ import { Admin } from '../admin';
 import { User } from '../user';
 import { adminlist } from '../admin-list';
 import { userlist } from '../user-list';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { userlist } from '../user-list';
   styleUrls: ['./indeks-strana.component.css']
 })
 export class IndeksStranaComponent implements OnInit {
-  indeksid=2;
+  indeksid=Number(localStorage.getItem("this.indeksid"));
   indeksime = '';
   indeksprezime = '';
   indeksadresa = '';
@@ -19,61 +20,14 @@ export class IndeksStranaComponent implements OnInit {
   indekssifra = '';
   sh: boolean = false;
   dalje = 0;
-  povratnitekst='ovde';
+  povratnitekst=':';
+  
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-  }
-
-  onClick() {
-    if (this.sh == false) {
-      for (let index = 0; index < userlist.length; index++) {
-        if (   this.indeksime == userlist[index].ime &&
-               this.indeksprezime == userlist[index].prezime &&
-               this.indeksadresa == userlist[index].adresa &&
-               this.indeksemail == userlist[index].email &&
-               this.indekssifra == userlist[index].sifra)
-          {
-            this.dalje = 1
-          }
-          else
-          {
-            if (   this.indeksime == userlist[index].ime &&
-                   this.indeksprezime != userlist[index].prezime &&
-                   this.indeksadresa != userlist[index].adresa &&
-                   this.indeksemail != userlist[index].email &&
-                   this.indekssifra != userlist[index].sifra)
-            {
-              this.indeksprezime="";
-              this.indeksadresa="";
-              this.indeksemail="";
-              this.indekssifra="";
-            }
-          }
-      }
-    }
-    if (this.sh == true) {
-      for (let index = 0; index < adminlist.length; index++) {
-        if (  this.indeksime == adminlist[index].ime &&
-              this.indeksprezime == adminlist[index].prezime &&
-              this.indeksemail == adminlist[index].email &&
-              this.indekssifra == adminlist[index].sifra)
-          {
-            this.dalje = 2
-          }
-          if (   this.indeksime == userlist[index].ime &&
-                 this.indeksprezime != userlist[index].prezime &&
-                 this.indeksemail != userlist[index].email &&
-                 this.indekssifra != userlist[index].sifra)
-            {
-              this.indeksprezime="";
-              this.indeksemail="";
-              this.indekssifra="";
-            }
-      }
-
-    }
+    localStorage.setItem("this.dalje",JSON.stringify(this.dalje));
+    
   }
   onClickNovo() {
     if (this.sh == false) {
@@ -90,7 +44,10 @@ export class IndeksStranaComponent implements OnInit {
             email:this.indeksemail,
             sifra:this.indekssifra})
             localStorage.setItem("user",obj);
+            this.dalje = 1
+            localStorage.setItem("this.dalje",JSON.stringify(this.dalje));
             this.povratnitekst=('------uspesno!-usr--> '+this.indeksime);
+            this.router.navigate(['/dish-list']);
         }
     }
     if (this.sh == true) {
@@ -105,10 +62,19 @@ export class IndeksStranaComponent implements OnInit {
             email:this.indeksemail,
             sifra:this.indekssifra})
             localStorage.setItem("admin",obj);
+            this.dalje = 2
+            localStorage.setItem("this.dalje",JSON.stringify(this.dalje));
             this.povratnitekst=('------uspesno!-adm--> '+this.indeksime);
+            this.router.navigate(['/administrativni-meni']);
         }
     }
     this.indeksid++;
+    localStorage.setItem("this.indeksid",JSON.stringify(this.indeksid));
+
+  }
+
+  rf(): void{
+    this.router.navigate(['/logovanje']);
   }
 
 }

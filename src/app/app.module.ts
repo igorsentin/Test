@@ -15,6 +15,7 @@ import { DishInputComponent } from './dish-input/dish-input.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LogovanjeComponent } from './logovanje/logovanje.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
      HeroDetailComponent,
      MessagesComponent,
      DashboardComponent,
+     LogovanjeComponent,
   ],
   imports: [
     BrowserModule,

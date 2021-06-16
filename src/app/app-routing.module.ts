@@ -7,6 +7,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { AdministrativniMeniComponent } from './administrativni-meni/administrativni-meni.component';
 import { IndeksStranaComponent } from './indeks-strana/indeks-strana.component';
 import { DishListComponent } from './dish-list/disl-list.component';
+import { LogovanjeComponent } from './logovanje/logovanje.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
@@ -17,10 +18,13 @@ const routes: Routes = [
   { path: 'administrativni-meni', component: AdministrativniMeniComponent },
   { path: 'indeks-strana', component: IndeksStranaComponent },
   { path: 'dish-list', component: DishListComponent },
+  { path: 'logovanje', component: LogovanjeComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+}

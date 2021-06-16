@@ -10,6 +10,7 @@ import { Plate } from '../Plate';
 export class DishListComponent implements OnInit {
   dishes = Plate;
   selectedDish?: Dish;
+  dlpretraga='';
   constructor() { }
 
   ngOnInit(): void {

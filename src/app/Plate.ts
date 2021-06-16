@@ -1,6 +1,7 @@
 import {Dish} from './dish'
+import { DishListComponent } from './dish-list/disl-list.component';
 
-export const Plate: Dish []=[
+export let Plate: Dish []=[
     {id: 1 ,name: 'Kiselo-ljuta supa',type: 'kineska hrana - predjelo',price: 250,imageUrl:'./assets/kiselo-ljutasupa.jpg'},
     {id: 9 ,name: 'Prolecne rolnice',type: 'kineska hrana - predjelo',price: 150,imageUrl:'./assets/prolecnerolnice.jpg'},
     {id: 10,name: 'Beli pirinac',type: 'kineska hrana - prilog',price: 100,imageUrl:'./assets/belipirinac.jpg'},
@@ -12,3 +13,17 @@ export const Plate: Dish []=[
     {id: 7 ,name: 'Djozle',type: 'kineska hrana - glavno jelo',price: 400,imageUrl: './assets/djozle.jpg'},
     {id: 8 ,name: 'Sushi',type: 'kineska hrana - glavno jelo',price: 1500,imageUrl: './assets/sushi.jpg'},
 ]
+
+export function deteleDishByID(id:number){
+    Plate = Plate.filter( x => x.id != id);
+}
+// to do more funcitons...
+
+export function addDishById (inpime:string,inptip:string,inpcena:number){
+let newPLate = new Dish();
+newPLate.name =inpime;
+newPLate.type=inptip;
+newPLate.price=inpcena;
+ Plate.push(newPLate);
+ console.log(Plate)
+}

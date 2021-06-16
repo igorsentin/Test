@@ -16,7 +16,10 @@ h1 {
     color: #333;
     font-family: Cambria, Georgia, serif;
   }
+  .spacing{
+    margin-bottom: 10px;
+  }
   /* everywhere else */
   * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif; 
   }
