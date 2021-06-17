@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Dish } from '../dish';
+import { Dish } from '../dish';;
 import { Plate } from '../Plate';
 
 @Component({
@@ -9,6 +9,7 @@ import { Plate } from '../Plate';
 })
 export class DishListComponent implements OnInit {
   dishes = Plate;
+  filteredDishes = this.dishes;
   selectedDish?: Dish;
   dlpretraga='';
   constructor() { }
@@ -25,5 +26,13 @@ export class DishListComponent implements OnInit {
     this.selectedDish = dish
   }
 
+  Autopretraga() {
+    this.filteredDishes = [];
+    this.dishes.forEach((elem, idx) => {
+      if (elem.name.toLowerCase().includes(this.dlpretraga.toLowerCase())) {
+        this.filteredDishes.push(elem);
+      }
+    })
+  }
 
 }

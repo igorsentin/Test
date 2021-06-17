@@ -11,6 +11,7 @@ import { deteleDishByID, Plate } from '../Plate';
 export class AdministrativniMeniComponent implements OnInit {
   constructor() { }
   dishes = Plate;
+  filteredDishes = this.dishes;
   admpretraga='';
   ovo: any;
   ngOnInit(): void {
@@ -22,6 +23,14 @@ export class AdministrativniMeniComponent implements OnInit {
     
   }
 
+  Autopretraga() {
+    this.filteredDishes = [];
+    this.dishes.forEach((elem, idx) => {
+      if (elem.name.toLowerCase().includes(this.admpretraga.toLowerCase())) {
+        this.filteredDishes.push(elem);
+      }
+    })
+  }
 }
 
 

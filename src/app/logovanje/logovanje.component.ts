@@ -16,7 +16,7 @@ logujime='';
 logujsifru='';
 ad=false;
 dalje=0;
-povratno='';
+povratno=':';
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -25,11 +25,7 @@ povratno='';
   onClick() {
     if (this.ad == false) {
       for (let index = 0; index < userlist.length; index++) {
-        if (   this.logujime == userlist[index].ime &&
-               
-               
-               
-               this.logujsifru == userlist[index].sifra)
+        if (   this.logujime == userlist[index].ime && this.logujsifru == userlist[index].sifra)
           {
             this.dalje = 1
             localStorage.setItem("this.dalje",JSON.stringify(this.dalje));
@@ -37,31 +33,28 @@ povratno='';
           }
           else
           {
-            if (   this.logujime == userlist[index].ime &&
-                   this.logujsifru != userlist[index].sifra)
+            if (   this.logujime == userlist[index].ime && this.logujsifru != userlist[index].sifra)
             {
               this.logujime="";
               this.logujsifru="";
-              this.povratno=('------greska');
+              this.povratno='------greska';
             }
           }
       }
     }
     if (this.ad == true) {
       for (let index = 0; index < adminlist.length; index++) {
-        if (  this.logujime == adminlist[index].ime &&
-              this.logujsifru == adminlist[index].sifra)
+        if (  this.logujime == adminlist[index].ime && this.logujsifru == adminlist[index].sifra)
           {
             this.dalje = 2
             localStorage.setItem("this.dalje",JSON.stringify(this.dalje));
             this.router.navigate(['/administrativni-meni']);
           }
-          if (   this.logujime == userlist[index].ime &&
-                 this.logujsifru != userlist[index].sifra)
+          if (   this.logujime == userlist[index].ime && this.logujsifru != userlist[index].sifra)
             {
               this.logujime="";
               this.logujsifru="";
-              this.povratno=('------greska');
+              this.povratno='------greska';
             }
       }
 
