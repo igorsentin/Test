@@ -1,11 +1,11 @@
-<html>
+<html class="coolcolor">
 <nav>
     <button routerLink="/indeks-strana">Naslovna</button>
     <button routerLink="/logovanje">Logovanje</button>
     <button *ngIf="booladmin" routerLink="/administrativni-meni">Admin meni</button>
     <button *ngIf="booluser" routerLink="/dish-list">Meni</button>
 </nav>
-<body>
+<body class="coolcolor2">
     <button (click)="Osvezi()">Osvezi</button>
     <div>
        <router-outlet></router-outlet>

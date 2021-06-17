@@ -19,6 +19,15 @@ h1 {
   .spacing{
     margin-bottom: 10px;
   }
+  
+  .coolcolor{
+    background-color: rgb(57, 128, 89)
+  }
+
+  .coolcolor2{
+    background-color: rgb(158, 107, 240)
+
+  }
   /* everywhere else */
   * {
     font-family: Arial, Helvetica, sans-serif; 
