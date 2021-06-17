@@ -4,6 +4,10 @@
 <div class="row">
     <div class="col-md-5">
         <ul class="list-group">
+            
+            <li *ngIf="filteredDishes.length===0">
+                <h1> NEMA REZULTATA</h1>
+            </li>
             <li *ngFor="let dish of filteredDishes" class="list-group-item" >
                 <div *ngIf="dish">
                     <p>

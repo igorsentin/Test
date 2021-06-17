@@ -8,13 +8,14 @@ import { Plate } from '../Plate';
   styleUrls: ['./disl-list.component.css']
 })
 export class DishListComponent implements OnInit {
-  dishes = Plate;
-  filteredDishes = this.dishes;
+  dishes:any[];
+  filteredDishes:any[];
   selectedDish?: Dish;
   dlpretraga='';
   constructor() { }
 
   ngOnInit(): void {
+    this.dishes = Plate;
     
   }
 
@@ -28,11 +29,13 @@ export class DishListComponent implements OnInit {
 
   Autopretraga() {
     this.filteredDishes = [];
+    this.dishes = Plate;
+    console.log(Plate);
     this.dishes.forEach((elem, idx) => {
       if (elem.name.toLowerCase().includes(this.dlpretraga.toLowerCase())) {
         this.filteredDishes.push(elem);
       }
-    })
+    });
   }
 
 }
